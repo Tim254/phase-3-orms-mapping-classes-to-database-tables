@@ -24,7 +24,7 @@ class Song
 
     DB[:conn].execute(sql, self.name, self.album)
 
-    self.id = DB[:conn].execute("SELECT last_insert_rowid() FROM songs")[0][0]
+    self.id = DB[:conn].last_insert_row_id
 
     self
   end
@@ -34,3 +34,23 @@ class Song
     song.save
   end
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
